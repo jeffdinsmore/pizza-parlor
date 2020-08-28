@@ -111,10 +111,7 @@ $(document).ready(function() {
 
     let pizzaToppings = new PizzaToppings(inputtedVeggies, inputtedMeat, inputtedSauces, inputtedCheese);
     let pizza = new Pizza(inputtedSize, inputtedType, pizzaToppings);
-    console.log(pizza);
     let pizzaPrice = Object.values(pizza);
-    console.log(pizzaPrice);
-    console.log(pizzaToppings.cheese.length);
     let finalPrice = pizza.piePrice(pizzaPrice);
     $("#price").text("$" + finalPrice);
     $("form").hide();
@@ -122,6 +119,7 @@ $(document).ready(function() {
     $("#result").show();
     $("#showSize").text(pizza.size);
     $("#showType").text(pizza.type);
+    $("#showToppings").text(pizzaToppings.sauces + "," + pizzaToppings.cheese + "," + pizzaToppings.veggie + "," + pizzaToppings.meat + ".");
   });
   $("button#change").click(function() {
     $("#result").hide();
