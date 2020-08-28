@@ -3,7 +3,7 @@ function Pizza(size, type, toppings) {
   this.size = size;
   this.type = type;
   this.toppings = toppings;
-  this.price = 8;
+  this.price = 9;
 }
 
 Pizza.prototype.piePrice = function() {
@@ -83,13 +83,13 @@ $(document).ready(function() {
     const inputtedVeggie = ["olives", "spinach"];
     const inputtedMeat = ["pepperoni"];
     const inputtedSauce = "marinara";
-    const inputtedCheese = ["provolone", "mozzarella", "feta"]
+    const inputtedCheese = $('input[type="checkbox"]').val();
     let pizzaToppings = new PizzaToppings(inputtedVeggie, inputtedMeat, inputtedSauce, inputtedCheese);
     let pizza = new Pizza(inputtedSize, inputtedType, pizzaToppings);
     console.log(pizza);
     let pizzaPrice = Object.values(pizza);
     console.log(pizzaPrice);
-    console.log(pizzaToppings.veggie.length);
+    console.log(pizzaToppings.cheese.length);
     let finalPrice = pizza.piePrice(pizzaPrice);
     console.log(finalPrice);
   })
