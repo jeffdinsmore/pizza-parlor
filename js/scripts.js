@@ -82,9 +82,24 @@ $(document).ready(function() {
     const inputtedType = $("#type").val();
     const inputtedVeggie = ["olives", "spinach"];
     const inputtedMeat = ["pepperoni"];
-    const inputtedSauce = "marinara";
-    const inputtedCheese = $('input[type="checkbox"]').val();
-    let pizzaToppings = new PizzaToppings(inputtedVeggie, inputtedMeat, inputtedSauce, inputtedCheese);
+    const inputtedSauces = [];
+    const inputtedCheese = [];
+    $("input#cheese").each(function() {
+      if ($(this).is(':checked')) {
+        let checked = ($(this).val());
+        inputtedCheese.push(checked);
+      }
+    });
+    $("input#sauces").each(function() {
+      if ($(this).is(':checked')) {
+        let checked = ($(this).val());
+        inputtedSauces.push(checked);
+      }
+    });
+
+      console.log(inputtedCheese);
+
+    let pizzaToppings = new PizzaToppings(inputtedVeggie, inputtedMeat, inputtedSauces, inputtedCheese);
     let pizza = new Pizza(inputtedSize, inputtedType, pizzaToppings);
     console.log(pizza);
     let pizzaPrice = Object.values(pizza);

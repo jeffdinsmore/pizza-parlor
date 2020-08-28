@@ -29,71 +29,102 @@
         <option value="thin">Thin Crust</option>
         <option value="thick">Thick Crust</option>
       </select>
-    
 
       <h4>Please Choose Toppings</h4>
       <h5>Sauces:</h5>
       <label class="checkContainer">Marinara
-        <input type="checkbox" id="marinara">
+        <input type="checkbox" id="sauces" value="marinara">
         <span class="checkmark"></span>
       </label>
       <label class="checkContainer">Barbecue Sauce
-        <input type="checkbox">
+        <input type="checkbox" id="sauces" value="barbecue sauce">
         <span class="checkmark"></span>
       </label>
       <label class="checkContainer">Alfredo
-        <input type="checkbox">
+        <input type="checkbox" id="sauces" value="alfredo">
         <span class="checkmark"></span>
       </label>
       <label class="checkContainer">Olive Oil
-        <input type="checkbox">
+        <input type="checkbox" id="sauces" value="olive oil">
         <span class="checkmark"></span>
       </label><label class="checkContainer">Basil Pesto
-        <input type="checkbox">
+        <input type="checkbox" id="sauces" value="Basil Pesto">
         <span class="checkmark"></span>
       </label>
       
-      
-      
-      
-      
       <h5>Cheese:</h5>
-      <label class="checkContainer" id="Ricotta">Ricotta
-        <input type="checkbox">
+      <label class="checkContainer">Ricotta
+        <input type="checkbox" id="cheese" value="Ricotta">
         <span class="checkmark"></span>
       </label>
       <label class="checkContainer">Feta
-        <input type="checkbox">
+        <input type="checkbox" id="cheese" value="Feta">
         <span class="checkmark"></span>
       </label>
       <label class="checkContainer">Parmesan
-        <input type="checkbox">
+        <input type="checkbox" id="cheese" value="Parmesan">
         <span class="checkmark"></span>
       </label>
       <label class="checkContainer">Provolone
-        <input type="checkbox">
+        <input type="checkbox" id="cheese" value="provolone">
         <span class="checkmark"></span>
       </label><label class="checkContainer">Mozzarella
-        <input type="checkbox">
+        <input type="checkbox" id="cheese" value="mozzarella">
         <span class="checkmark"></span>
       </label>
-    </label><label class="checkContainer">No Cheese
-      <input type="checkbox">
+    </label><label class="checkContainer">Vegan Cheese
+      <input type="checkbox" id="cheese" value="Vegan Cheese">
       <span class="checkmark"></span>
     </label>
       
-      
-      
-      
-      
-
       <h5>Veggies:</h5>
-      Olives
-      Broccoli
-      Spinach
-      Jalapenos
-      Tomatoes
-      Sun-Dried Tomatoes
+      <label class="checkContainer">Olives
+        <input type="checkbox" id="veggies" value="olives">
+        <span class="checkmark"></span>
+      </label>
+      <label class="checkContainer">Broccoli
+        <input type="checkbox" id="cheese" value="Feta">
+        <span class="checkmark"></span>
+      </label>
+      <label class="checkContainer">Spinach
+        <input type="checkbox" id="cheese" value="Parmesan">
+        <span class="checkmark"></span>
+      </label>
+      <label class="checkContainer">Jalapenos
+        <input type="checkbox" id="cheese" value="provolone">
+        <span class="checkmark"></span>
+      </label><label class="checkContainer">Tomatoes
+        <input type="checkbox" id="cheese" value="mozzarella">
+        <span class="checkmark"></span>
+      </label>
+    </label><label class="checkContainer">Sun-Dried Tomatoes
+      <input type="checkbox" id="cheese" value="Vegan Cheese">
+      <span class="checkmark"></span>
+    </label>
+    <label class="checkContainer">Olives
+      <input type="checkbox" id="veggies" value="olives">
+      <span class="checkmark"></span>
+    </label>
+    <label class="checkContainer">Broccoli
+      <input type="checkbox" id="cheese" value="Feta">
+      <span class="checkmark"></span>
+    </label>
+    <label class="checkContainer">Spinach
+      <input type="checkbox" id="cheese" value="Parmesan">
+      <span class="checkmark"></span>
+    </label>
+    <label class="checkContainer">Jalapenos
+      <input type="checkbox" id="cheese" value="provolone">
+      <span class="checkmark"></span>
+    </label><label class="checkContainer">Tomatoes
+      <input type="checkbox" id="cheese" value="mozzarella">
+      <span class="checkmark"></span>
+    </label>
+  </label><label class="checkContainer">Sun-Dried Tomatoes
+    <input type="checkbox" id="cheese" value="Vegan Cheese">
+    <span class="checkmark"></span>
+  </label>
+    
       Mushrooms
       Pineapple
       Onions
@@ -115,6 +146,7 @@
       
       <button type="submit" id="submit" class="btn btn-success">Submit</button>
     </form>
+    <div id="result"></div>
   </div>
   <footer></footer>
 </body>
