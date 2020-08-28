@@ -65,6 +65,11 @@ $(document).ready(function() {
     const inputtedMeat = [];
     const inputtedSauces = [];
     const inputtedCheese = [];
+    if (inputtedSize === "error") {
+      alert("Please choose a size");
+    } else if (inputtedType === "error") {
+      alert("Please choose a type of crust");
+    } else {
     $("input#cheese").each(function() {
       if ($(this).is(':checked')) {
         let checked = ($(this).val());
@@ -101,7 +106,9 @@ $(document).ready(function() {
     $("#showSize").text(pizza.size);
     $("#showType").text(pizza.type);
     $("#showToppings").text(pizzaToppings.sauces + "," + pizzaToppings.cheese + "," + pizzaToppings.veggie + "," + pizzaToppings.meat + ".");
+    }
   });
+
   $("button#change").click(function() {
     $("#result").hide();
     $("form").show();
