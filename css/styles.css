@@ -72,3 +72,19 @@ header, footer {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+.row {
+  margin-bottom: 40px;
+}
+
+button#change {
+  display: none;
+}
+
+#result {
+  font-size: 28px;
+  display: none;
+}
+#price {
+  font-weight: bold;
+}

@@ -16,7 +16,7 @@ Pizza.prototype.piePrice = function() {
   } else {
     this.price = this.price;
   }
-  if (this.type === "thick") {
+  if (this.type === "thick crust") {
     this.price +=2;
   } else {
     this.price = this.price
@@ -116,9 +116,17 @@ $(document).ready(function() {
     console.log(pizzaPrice);
     console.log(pizzaToppings.cheese.length);
     let finalPrice = pizza.piePrice(pizzaPrice);
-    $("#result").text(finalPrice);
-  })
-  
-  
+    $("#price").text("$" + finalPrice);
+    $("form").hide();
+    $("button#change").show();
+    $("#result").show();
+    $("#showSize").text(pizza.size);
+    $("#showType").text(pizza.type);
+  });
+  $("button#change").click(function() {
+    $("#result").hide();
+    $("form").show();
+    $("button#change").hide();
+  });
 });
 
