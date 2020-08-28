@@ -21,8 +21,9 @@ Pizza.prototype.piePrice = function() {
   } else {
     this.price = this.price
   }
-  this.price = this.price + this.toppings.length * .5;
-  
+  this.price = this.price + this.toppings.veggie.length * .5;
+  this.price = this.price + this.toppings.meat.length * 1;
+  this.price = this.price + this.toppings.cheese.length * 1 - 1;
   return this.price;
 }
 
@@ -83,13 +84,13 @@ $(document).ready(function() {
     const inputtedVeggie = ["olives", "spinach"];
     const inputtedMeat = ["pepperoni"];
     const inputtedSauce = "marinara";
-    const inputtedCheese = ["provolone", "mozzarella"]
+    const inputtedCheese = ["provolone", "mozzarella", "feta"]
     let pizzaToppings = new PizzaToppings(inputtedVeggie, inputtedMeat, inputtedSauce, inputtedCheese);
     let pizza = new Pizza(inputtedSize, inputtedType, pizzaToppings);
     console.log(pizza);
     let pizzaPrice = Object.values(pizza);
     console.log(pizzaPrice);
-    console.log(pizzaPrice.pizzaToppings[2].length);
+    console.log(pizzaToppings.veggie.length);
     let finalPrice = pizza.piePrice(pizzaPrice);
     console.log(finalPrice);
   })
