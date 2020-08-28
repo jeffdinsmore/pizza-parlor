@@ -80,8 +80,8 @@ $(document).ready(function() {
     event.preventDefault();
     const inputtedSize = $("#size").val();
     const inputtedType = $("#type").val();
-    const inputtedVeggie = ["olives", "spinach"];
-    const inputtedMeat = ["pepperoni"];
+    const inputtedVeggies = [];
+    const inputtedMeat = [];
     const inputtedSauces = [];
     const inputtedCheese = [];
     $("input#cheese").each(function() {
@@ -96,17 +96,27 @@ $(document).ready(function() {
         inputtedSauces.push(checked);
       }
     });
+    $("input#veggies").each(function() {
+      if ($(this).is(':checked')) {
+        let checked = ($(this).val());
+        inputtedVeggies.push(checked);
+      }
+    });
+    $("input#meat").each(function() {
+      if ($(this).is(':checked')) {
+        let checked = ($(this).val());
+        inputtedMeat.push(checked);
+      }
+    });
 
-      console.log(inputtedCheese);
-
-    let pizzaToppings = new PizzaToppings(inputtedVeggie, inputtedMeat, inputtedSauces, inputtedCheese);
+    let pizzaToppings = new PizzaToppings(inputtedVeggies, inputtedMeat, inputtedSauces, inputtedCheese);
     let pizza = new Pizza(inputtedSize, inputtedType, pizzaToppings);
     console.log(pizza);
     let pizzaPrice = Object.values(pizza);
     console.log(pizzaPrice);
     console.log(pizzaToppings.cheese.length);
     let finalPrice = pizza.piePrice(pizzaPrice);
-    console.log(finalPrice);
+    $("#result").text(finalPrice);
   })
   
   
