@@ -19,29 +19,16 @@ Pizza.prototype.piePrice = function() {
   if (this.type === "thick crust") {
     this.price +=2;
   } else {
-    this.price = this.price
+    this.price = this.price;
   }
   this.price = this.price + this.toppings.veggie.length * .5;
   this.price = this.price + this.toppings.meat.length * 1;
-  let cheeseLength = this.toppings.cheese.length - 1
-  this.price = this.price + (cheeseLength * 1);
-  console.log(cheeseLength);
+  if (this.toppings.cheese.length > 1) {
+    this.price = this.price + (this.toppings.cheese.length - 1);
+  }
+  console.log(this.toppings.cheese.length);
   // this.price = this.price + ((this.toppings.sauces.length - 2) * 1);
   return this.price;
-}
-
-// Business Pizza Size Logic
-function PizzaSize(small, medium, large, xLarge) {
-  this.small = small;
-  this.meduim = medium;
-  this.large = large;
-  this.xLarge = xLarge;
-}
-
-// Business Pizza Type Logic
-function PizzaType(thinCrust, thickCrust) {
-  this.thinCrust = thinCrust;
-  this.thickCrust = thickCrust;
 }
 
 // Business Pizza Toppings Logic
@@ -65,47 +52,47 @@ $(document).ready(function() {
     const inputtedMeat = [];
     const inputtedSauces = [];
     const inputtedCheese = [];
+    let pizzaToppings = new PizzaToppings(inputtedVeggies, inputtedMeat, inputtedSauces, inputtedCheese);
+    let pizza = new Pizza(inputtedSize, inputtedType, pizzaToppings);
+    
     if (inputtedSize === "error") {
       alert("Please choose a size");
     } else if (inputtedType === "error") {
       alert("Please choose a type of crust");
     } else {
-    $("input#cheese").each(function() {
-      if ($(this).is(':checked')) {
-        let checked = ($(this).val());
-        inputtedCheese.push(checked);
-      }
-    });
-    $("input#sauces").each(function() {
-      if ($(this).is(':checked')) {
-        let checked = ($(this).val());
-        inputtedSauces.push(checked);
-      }
-    });
-    $("input#veggies").each(function() {
-      if ($(this).is(':checked')) {
-        let checked = ($(this).val());
-        inputtedVeggies.push(checked);
-      }
-    });
-    $("input#meat").each(function() {
-      if ($(this).is(':checked')) {
-        let checked = ($(this).val());
-        inputtedMeat.push(checked);
-      }
-    });
-
-    let pizzaToppings = new PizzaToppings(inputtedVeggies, inputtedMeat, inputtedSauces, inputtedCheese);
-    let pizza = new Pizza(inputtedSize, inputtedType, pizzaToppings);
-    let pizzaPrice = Object.values(pizza);
-    let finalPrice = pizza.piePrice(pizzaPrice).toFixed(2);
-    $("#price").text("$" + finalPrice);
-    $("form").hide();
-    $("button#change").show();
-    $("#result").show();
-    $("#showSize").text(pizza.size);
-    $("#showType").text(pizza.type);
-    $("#showToppings").text(pizzaToppings.sauces + "," + pizzaToppings.cheese + "," + pizzaToppings.veggie + "," + pizzaToppings.meat + ".");
+      $("input#cheese").each(function() {
+        if ($(this).is(':checked')) {
+          let checked = ($(this).val());
+          inputtedCheese.push(checked);
+        }
+      });
+      $("input#sauces").each(function() {
+        if ($(this).is(':checked')) {
+          let checked = ($(this).val());
+          inputtedSauces.push(checked);
+        }
+      });
+      $("input#veggies").each(function() {
+        if ($(this).is(':checked')) {
+          let checked = ($(this).val());
+          inputtedVeggies.push(checked);
+        }
+      });
+      $("input#meat").each(function() {
+        if ($(this).is(':checked')) {
+          let checked = ($(this).val());
+          inputtedMeat.push(checked);
+        }
+      });
+      let pizzaPrice = Object.values(pizza);
+      let finalPrice = pizza.piePrice(pizzaPrice).toFixed(2);
+      $("#price").text("$" + finalPrice);
+      $("form").hide();
+      $("button#change").show();
+      $("#result").show();
+      $("#showSize").text(pizza.size);
+      $("#showType").text(pizza.type);
+      $("#showToppings").text(pizzaToppings.sauces + "," + pizzaToppings.cheese + "," + pizzaToppings.veggie + "," + pizzaToppings.meat + ".");
     }
   });
 
