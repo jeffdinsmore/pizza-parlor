@@ -1,12 +1,14 @@
-# _{Application Name}_
+# _Jeff's Pizza Parlor Website_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _Website where a user can select pizzas or pizza toppings and get a price for that pizza, 08/28/2020_
 
 #### By _Jeff Dinsmore_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_This website will allow a user to build their own pizza and get a price for that pizza._
+
+
 
 ## Setup/Installation Requirements
 

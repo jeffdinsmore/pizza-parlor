@@ -3,18 +3,27 @@ function Pizza(size, type, toppings) {
   this.size = size;
   this.type = type;
   this.toppings = toppings;
+  this.price = 0;
 }
 
 Pizza.prototype.price = function() {
-
+  if (this.size === "small") {
+    this.price += 8;
+  } else {this.price = 4;}
 }
 
-// Business Pizza Type Logic
-function PizzaType(small, medium, large, xlarge) {
+// Business Pizza Size Logic
+function PizzaSize(small, medium, large, xLarge) {
   this.small = small;
   this.meduim = medium;
   this.large = large;
-  this.xlarge = xlarge;
+  this.xLarge = xLarge;
+}
+
+// Business Pizza Type Logic
+function PizzaType(thinCrust, thickCrust) {
+  this.thinCrust = thinCrust;
+  this.thickCrust = thickCrust;
 }
 
 // Business Pizza Toppings Logic
@@ -33,10 +42,27 @@ function PizzaToppings(olives, broccoli, spinach, jalapenos, tomatoes, sunDriedT
   this.pepperoncini = pepperoncini;
 }
 
+
+
 // User Interface Logic
+let pizza = new Pizza();
+
 $(document).ready(function() {
+  $("form").submit(function(event) {
+    event.preventDefault();
+    const smallInput = "small";
+    const thinInput = "thin";
+    let inputtedSize = new PizzaSize(smallInput, mediumInput, largeInput, xLargeInput);
+    let inputtedType = new PizzaType (thinInput, thickInput);
+    let inputtedToppings = new PizzaToppings(olivesInput, broccoliInput, spinachInput, jalapenosInput, tomatoesInput, sunDriedTomatoesInput, mushroomsInput, pineappleInput, onionsInput, redPeppersInput, greenPeppersInput, pepperonciniInput);
+    let newPizza = new Pizza(inputtedSize, inputtedType, inputtedToppings);
+    console.log(pizza.price);
+    let pizzaPrice = Object.values(newPizza);
+    console.log(pizzaPrice);
+    let finalPrice = pizza.price(pizzaPrice);
+    console.log(finalPrice);
+  })
   
   
-  event.preventDefault();
 });
 
