@@ -3,13 +3,22 @@ function Pizza(size, type, toppings) {
   this.size = size;
   this.type = type;
   this.toppings = toppings;
-  this.price = 0;
+  this.price = 8;
 }
 
-Pizza.prototype.price = function() {
+Pizza.prototype.piePrice = function() {
   if (this.size === "small") {
-    this.price += 8;
-  } else {this.price = 4;}
+    this.price += 2;
+  } else {
+    this.price = this.price;
+  }
+  if (this.type === "thin") {
+    this.price +=2;
+  } else {
+    this.price = this.price
+  }
+
+  return this.price;
 }
 
 // Business Pizza Size Logic
@@ -50,16 +59,17 @@ let pizza = new Pizza();
 $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
-    const smallInput = "small";
-    const thinInput = "thin";
-    let inputtedSize = new PizzaSize(smallInput, mediumInput, largeInput, xLargeInput);
-    let inputtedType = new PizzaType (thinInput, thickInput);
-    let inputtedToppings = new PizzaToppings(olivesInput, broccoliInput, spinachInput, jalapenosInput, tomatoesInput, sunDriedTomatoesInput, mushroomsInput, pineappleInput, onionsInput, redPeppersInput, greenPeppersInput, pepperonciniInput);
-    let newPizza = new Pizza(inputtedSize, inputtedType, inputtedToppings);
+    const inputtedSize = "small";
+    const inputtedType = "thin";
+    const inputtedToppings = "olives"
+    // let inputtedSize = new PizzaSize(smallInput, mediumInput, largeInput, xLargeInput);
+    // let inputtedType = new PizzaType (thinInput, thickInput);
+    // let inputtedToppings = new PizzaToppings(olivesInput, broccoliInput, spinachInput, jalapenosInput, tomatoesInput, sunDriedTomatoesInput, mushroomsInput, pineappleInput, onionsInput, redPeppersInput, greenPeppersInput, pepperonciniInput);
+    let pizza = new Pizza(inputtedSize, inputtedType, inputtedToppings);
     console.log(pizza.price);
-    let pizzaPrice = Object.values(newPizza);
+    let pizzaPrice = Object.values(pizza);
     console.log(pizzaPrice);
-    let finalPrice = pizza.price(pizzaPrice);
+    let finalPrice = pizza.piePrice(pizzaPrice);
     console.log(finalPrice);
   })
   
