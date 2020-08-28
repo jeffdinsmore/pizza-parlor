@@ -78,8 +78,8 @@ let pizzaToppings = new PizzaToppings();
 $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
-    const inputtedSize = $("#size").val();;
-    const inputtedType = "thin";
+    const inputtedSize = $("#size").val();
+    const inputtedType = $("#type").val();
     const inputtedVeggie = ["olives", "spinach"];
     const inputtedMeat = ["pepperoni"];
     const inputtedSauce = "marinara";
