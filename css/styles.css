@@ -6,13 +6,21 @@ header, footer {
   width: 300px;
 }
 
+h4 {
+  margin-top: 40px;
+}
+
+h5 {
+  margin: 20px 0px 10px 0px;
+}
+
 .checkContainer {
   display: block;
   position: relative;
   padding-left: 35px;
   margin-bottom: 12px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 18px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -33,8 +41,8 @@ header, footer {
   position: absolute;
   top: 0;
   left: 0;
-  height: 25px;
-  width: 25px;
+  height: 24px;
+  width: 24px;
   background-color: #eee;
 }
 
@@ -63,7 +71,7 @@ header, footer {
 /* Style the checkmark/indicator */
 .checkContainer .checkmark:after {
   left: 9px;
-  top: 5px;
+  top: 6px;
   width: 5px;
   height: 10px;
   border: solid white;
@@ -74,7 +82,7 @@ header, footer {
 }
 
 .row {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 button#change {
@@ -86,5 +94,15 @@ button#change {
   display: none;
 }
 #price {
+  font-weight: bold;
+}
+
+button {
+  margin-top: 10px;
+}
+
+#showType, #showSize, #showToppings {
+  font-style: italic;
+  color: #1B3F73;
   font-weight: bold;
 }

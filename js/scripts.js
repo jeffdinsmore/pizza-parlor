@@ -3,7 +3,7 @@ function Pizza(size, type, toppings) {
   this.size = size;
   this.type = type;
   this.toppings = toppings;
-  this.price = 9;
+  this.price = 10;
 }
 
 Pizza.prototype.piePrice = function() {
@@ -23,7 +23,10 @@ Pizza.prototype.piePrice = function() {
   }
   this.price = this.price + this.toppings.veggie.length * .5;
   this.price = this.price + this.toppings.meat.length * 1;
-  this.price = this.price + this.toppings.cheese.length * 1 - 1;
+  let cheeseLength = this.toppings.cheese.length - 1
+  this.price = this.price + (cheeseLength * 1);
+  console.log(cheeseLength);
+  // this.price = this.price + ((this.toppings.sauces.length - 2) * 1);
   return this.price;
 }
 
@@ -48,28 +51,6 @@ function PizzaToppings(veggie, meat, sauces, cheese) {
   this.sauces = sauces;
   this.cheese = cheese;
 }
-  
-  
-  
-  
-  
-  
-//   olives, broccoli, spinach, jalapenos, tomatoes, sunDriedTomatoes, mushrooms, pineapple, onions, redPeppers, greenPeppers, pepperoncini) {
-//   this.olives = olives;
-//   this.broccoli = broccoli;
-//   this.spinach = spinach;
-//   this.jalapenos = jalapenos;
-//   this.tomatoes = tomatoes;
-//   this.sunDriedTomatoes = sunDriedTomatoes;
-//   this.mushrooms = mushrooms;
-//   this.pineapple = pineapple;
-//   this.onions = onions;
-//   this.redPeppers = redPeppers;
-//   this.greenPeppers = greenPeppers;
-//   this.pepperoncini = pepperoncini;
-// }
-
-
 
 // User Interface Logic
 let pizza = new Pizza();
@@ -112,7 +93,7 @@ $(document).ready(function() {
     let pizzaToppings = new PizzaToppings(inputtedVeggies, inputtedMeat, inputtedSauces, inputtedCheese);
     let pizza = new Pizza(inputtedSize, inputtedType, pizzaToppings);
     let pizzaPrice = Object.values(pizza);
-    let finalPrice = pizza.piePrice(pizzaPrice);
+    let finalPrice = pizza.piePrice(pizzaPrice).toFixed(2);
     $("#price").text("$" + finalPrice);
     $("form").hide();
     $("button#change").show();
