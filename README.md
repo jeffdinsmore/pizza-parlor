@@ -8,7 +8,35 @@
 
 _This website will allow a user to build their own pizza and get a price for that pizza._
 
+Describe: pizza-parlor()
 
+Spec 1: The program returns an additional charge of $2 for every size increase from small with a base price of $10
+* Input: "Medium" size pizza selected
+* Output: "$12"
+* Input: "Large" size pizza selected
+* Output: "$14"
+
+Spec 2: The program returns an additional charge of $2 for "thick crust" chosen as type of pizza - base price $10
+* Input: "thick crust"
+* Output: $12
+
+Spec 3: The program returns an additional charge of $1 for each cheese selected after the first one - base price $10
+* Input: "Ricotta"
+* Output: $10
+* Input: "Ricotta, Feta"
+* Output: $11
+
+Spec 4: The program returns an additional charge of $0.5 for each veggie selected - base price $10
+* Input: "Olives"
+* Output: $10.5
+* Input: "Olives, Broccoli"
+* Output: $11
+
+Spec 5: The program returns an additional charge of $1 for each meat selected - base price $10
+* Input: "Chicken"
+* Output: $11
+* Input: "Chicken, Anchovies"
+* Output: $12
 
 ## Setup/Installation Requirements
 
