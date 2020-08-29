@@ -92,7 +92,7 @@ $(document).ready(function() {
       $("#result").show();
       $("#showSize").text(pizza.size);
       $("#showType").text(pizza.type);
-      $("#showToppings").text(pizzaToppings.sauces + "," + pizzaToppings.cheese + "," + pizzaToppings.veggie + "," + pizzaToppings.meat + ".");
+      $("#showToppings").text(pizzaToppings.sauces.join(", ") + ", " + pizzaToppings.cheese.join(", ") + ", " + pizzaToppings.veggie.join(", ") + ", " + pizzaToppings.meat.join(", ") + ".");
     }
   });
 
