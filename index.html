@@ -11,23 +11,31 @@
   <header></header>
   <div class="container">
     <h1>Jeff's Pizza Parlor</h1>
-    <br>
-    <form>
+    <div id="opening">
+      <img src="images/pizza.jpg">
+      <div class="welcome">
+        <h3>Welcome to Jeff's Pizza Parlor where you can customize your pizza! Would you like to order a pizza?</h3>
+      </div>
+      <button type="submit" class="btn btn-primary" id="go">Lets Go</button>
+    </div>
+    <form id="order">
+      <h4>Base price for a small size cheese pizza is $10.00.</h4>
+      <h4>Price increases adding extras.</h4>
 <!-- Pizza Size Options -->
       <h4>Please Choose a Size:</h4>
       <select class="form-control" id="size">
         <option value="error">Please Select</option>
-        <option value="small">Small - 10 inch</option>
-        <option value="medium">Medium - 12 inch</option>
-        <option value="large">Large - 14 inch</option>
-        <option value="extra large">X-Large - 16 inch</option>
+        <option value="small">Small: 10 inch</option>
+        <option value="medium">Medium: 12 inch - Add $2.00</option>
+        <option value="large">Large: 14 inch - Add $4.00</option>
+        <option value="extra large">X-Large: 16 inch - Add $6.00</option>
       </select> 
 <!-- Pizza Crust Type Options -->
       <h4>Please Choose Type of Crust</h4>
       <select class="form-control" id="type">
         <option value="error">Please Select</option>
         <option value="thin crust">Thin Crust</option>
-        <option value="thick crust">Thick Crust</option>
+        <option value="thick crust">Thick Crust - Add $2.00</span></option>
       </select>
 <!-- Pizza Toppings Options -->
       <h4>Please Choose Toppings</h4>

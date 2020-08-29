@@ -26,8 +26,6 @@ Pizza.prototype.piePrice = function() {
   if (this.toppings.cheese.length > 1) {
     this.price = this.price + (this.toppings.cheese.length - 1);
   }
-  console.log(this.toppings.cheese.length);
-  // this.price = this.price + ((this.toppings.sauces.length - 2) * 1);
   return this.price;
 }
 
@@ -44,7 +42,11 @@ let pizza = new Pizza();
 let pizzaToppings = new PizzaToppings();
 
 $(document).ready(function() {
-  $("form").submit(function(event) {
+  $("button#go").click(function() {
+    $("form#order").show();
+    $("#opening").hide();
+  })
+  $("form#order").submit(function(event) {
     event.preventDefault();
     const inputtedSize = $("#size").val();
     const inputtedType = $("#type").val();
