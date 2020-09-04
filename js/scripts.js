@@ -1,17 +1,18 @@
 // Business Logic
-function Pizza(size, type, toppings) {
+function Pizza(size, type, toppings, price) {
   this.size = size;
   this.type = type;
   this.toppings = toppings;
-  this.price = 10;
+  this.price = price;
 }
 
 Pizza.prototype.piePrice = function() {
+  this.price = 10;
   if (this.size === "medium") {
     this.price += 2;
   } else if (this.size === "large") {
     this.price += 4;
-  } else if (this.size === "xLarge") {
+  } else if (this.size === "extra large") {
     this.price +=6;
   } else {
     this.price = this.price;
@@ -26,7 +27,6 @@ Pizza.prototype.piePrice = function() {
   if (this.toppings.cheese.length > 1) {
     this.price = this.price + (this.toppings.cheese.length - 1);
   }
-  return this.price;
 }
 
 // Business Pizza Toppings Logic
@@ -38,9 +38,6 @@ function PizzaToppings(veggie, meat, sauces, cheese) {
 }
 
 // User Interface Logic
-let pizza = new Pizza();
-let pizzaToppings = new PizzaToppings();
-
 $(document).ready(function() {
   $("button#go").click(function() {
     $("form#order").show();
@@ -86,8 +83,8 @@ $(document).ready(function() {
           inputtedMeat.push(checked);
         }
       });
-      let pizzaPrice = Object.values(pizza);
-      let finalPrice = pizza.piePrice(pizzaPrice).toFixed(2);
+      pizza.piePrice();
+      let finalPrice = pizza.price.toFixed(2);
       $("#price").text("$" + finalPrice);
       $("form").hide();
       $("button#change").show();
@@ -97,11 +94,12 @@ $(document).ready(function() {
       $("#showToppings").text(pizzaToppings.sauces.join(", ") + ", " + pizzaToppings.cheese.join(", ") + ", " + pizzaToppings.veggie.join(", ") + ", " + pizzaToppings.meat.join(", ") + ".");
     }
   });
-
+  
   $("button#change").click(function() {
     $("#result").hide();
     $("form").show();
     $("button#change").hide();
   });
 });
+
 
